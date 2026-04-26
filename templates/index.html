@@ -1,11 +1,502 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Presentacion</title>
+    <title>Segmentación Poblacional · Cundinamarca</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
 </head>
 <body>
-    
+
+<!-- HERO -->
+<header class="hero" id="inicio">
+    <div class="hero-noise"></div>
+    <nav class="navbar">
+        <div class="nav-logo">
+            <span class="logo-icon">⬡</span>
+            <span class="logo-text">CundaData</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#problematica">Problemática</a></li>
+            <li><a href="#justificacion">Justificación</a></li>
+            <li><a href="#objetivos">Objetivos</a></li>
+            <li><a href="#proceso">Proceso</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero-content">
+        <div class="hero-tag">Cundinamarca · 5 Municipios · 4M+ Registros</div>
+        <h1 class="hero-title">
+            <span class="title-line">Segmentación</span>
+            <span class="title-line italic">Efectiva</span>
+            <span class="title-line">de Población</span>
+            <span class="title-line accent">Vulnerable</span>
+        </h1>
+        <p class="hero-sub">Análisis de datos sociales para la toma de decisiones en Soacha, Facatativá, Zipaquirá, Chía y Fusagasugá</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <span class="stat-num" id="stat-registros">4,000,000</span>
+                <span class="stat-label">Registros analizados</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-num" id="stat-municipios">5</span>
+                <span class="stat-label">Municipios</span>
+            </div>
+            <div class="hero-stat">
+                <span class="stat-num" id="stat-vulnerables">471K</span>
+                <span class="stat-label">Personas vulnerables</span>
+            </div>
+        </div>
+        <a href="#problematica" class="hero-cta">Explorar análisis ↓</a>
+    </div>
+
+    <div class="hero-map-decoration">
+        <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" class="map-svg">
+            <defs>
+                <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#C8A96E" stop-opacity="0.4"/>
+                    <stop offset="100%" stop-color="#C8A96E" stop-opacity="0"/>
+                </radialGradient>
+            </defs>
+            <circle cx="250" cy="200" r="150" fill="url(#glow)"/>
+            <!-- Puntos municipios -->
+            <circle cx="180" cy="220" r="8" fill="#E74C3C" opacity="0.9" class="pulse-dot"/>
+            <circle cx="150" cy="170" r="6" fill="#E67E22" opacity="0.9" class="pulse-dot"/>
+            <circle cx="250" cy="140" r="6" fill="#F39C12" opacity="0.9" class="pulse-dot"/>
+            <circle cx="310" cy="160" r="6" fill="#27AE60" opacity="0.9" class="pulse-dot"/>
+            <circle cx="200" cy="290" r="7" fill="#8E44AD" opacity="0.9" class="pulse-dot"/>
+            <!-- Líneas conectoras -->
+            <line x1="180" y1="220" x2="150" y2="170" stroke="#C8A96E" stroke-width="1" opacity="0.3"/>
+            <line x1="150" y1="170" x2="250" y2="140" stroke="#C8A96E" stroke-width="1" opacity="0.3"/>
+            <line x1="250" y1="140" x2="310" y2="160" stroke="#C8A96E" stroke-width="1" opacity="0.3"/>
+            <line x1="180" y1="220" x2="200" y2="290" stroke="#C8A96E" stroke-width="1" opacity="0.3"/>
+            <!-- Labels -->
+            <text x="165" y="240" fill="#C8A96E" font-size="10" font-family="DM Mono">Soacha</text>
+            <text x="120" y="165" fill="#C8A96E" font-size="10" font-family="DM Mono">Facatativá</text>
+            <text x="255" y="135" fill="#C8A96E" font-size="10" font-family="DM Mono">Zipaquirá</text>
+            <text x="315" y="165" fill="#C8A96E" font-size="10" font-family="DM Mono">Chía</text>
+            <text x="185" y="310" fill="#C8A96E" font-size="10" font-family="DM Mono">Fusagasugá</text>
+        </svg>
+    </div>
+</header>
+
+<!-- PROBLEMÁTICA -->
+<section class="section" id="problematica">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">01 — Problemática</span>
+            <h2 class="section-title">La Brecha en la<br><em>Segmentación Social</em></h2>
+        </div>
+        <div class="problem-grid">
+            <div class="problem-main">
+                <p class="problem-lead">
+                    Cundinamarca enfrenta una crisis silenciosa: sin datos estructurados sobre su población más vulnerable, las políticas sociales llegan tarde, mal o simplemente no llegan.
+                </p>
+                <p class="problem-body">
+                    Los municipios de Soacha, Facatativá, Zipaquirá, Chía y Fusagasugá concentran más de <strong>471.000 personas en condición de vulnerabilidad</strong>. Sin embargo, la falta de segmentación efectiva impide que los tomadores de decisión identifiquen con precisión dónde, cómo y a quién intervenir.
+                </p>
+                <p class="problem-body">
+                    La consecuencia directa es la asignación ineficiente de recursos: subsidios que no llegan a quienes los necesitan, programas duplicados en zonas de bajo impacto y comunidades enteras en exclusión estructural.
+                </p>
+            </div>
+            <div class="problem-cards">
+                <div class="prob-card red">
+                    <div class="prob-icon">⚠</div>
+                    <h4>Datos dispersos</h4>
+                    <p>Información fragmentada entre SISBEN, Registraduría y entidades locales sin integración</p>
+                </div>
+                <div class="prob-card orange">
+                    <div class="prob-icon">📊</div>
+                    <h4>Sin análisis cruzado</h4>
+                    <p>Variables de salud, educación y empleo no se cruzan para generar perfiles de riesgo</p>
+                </div>
+                <div class="prob-card purple">
+                    <div class="prob-icon">🗺</div>
+                    <h4>Brechas territoriales</h4>
+                    <p>Diferencias extremas entre municipios que no se visibilizan en la planeación regional</p>
+                </div>
+                <div class="prob-card dark">
+                    <div class="prob-icon">⏱</div>
+                    <h4>Decisiones tardías</h4>
+                    <p>Los ciclos de actualización de datos demoran 12-18 meses, generando intervenciones reactivas</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JUSTIFICACIÓN -->
+<section class="section alt" id="justificacion">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag">02 — Justificación</span>
+            <h2 class="section-title">¿Por qué este<br><em>análisis importa?</em></h2>
+        </div>
+        <div class="justify-grid">
+            <div class="justify-card">
+                <span class="justify-num">01</span>
+                <h3>Escala del fenómeno</h3>
+                <p>Con más de 4 millones de registros de datos históricos y actuales, existe la masa crítica para generar modelos predictivos de alta precisión que guíen la política pública con evidencia.</p>
+            </div>
+            <div class="justify-card">
+                <span class="justify-num">02</span>
+                <h3>Recursos en juego</h3>
+                <p>Cundinamarca invierte anualmente más de $2 billones COP en programas sociales. Una segmentación precisa puede redirigir al menos el 30% hacia las poblaciones de mayor impacto potencial.</p>
+            </div>
+            <div class="justify-card">
+                <span class="justify-num">03</span>
+                <h3>Contexto post-pandemia</h3>
+                <p>El COVID-19 amplió las brechas de vulnerabilidad en un 34% en estos municipios. La reconstrucción del tejido social requiere identificación granular de quién necesita qué tipo de apoyo.</p>
+            </div>
+            <div class="justify-card">
+                <span class="justify-num">04</span>
+                <h3>Capacidad tecnológica</h3>
+                <p>Las herramientas de análisis de datos permiten hoy segmentaciones que antes requerían censos completos. Este proyecto demuestra que es posible a escala municipal con datos existentes.</p>
+            </div>
+            <div class="justify-card">
+                <span class="justify-num">05</span>
+                <h3>Mandato legal</h3>
+                <p>La Ley 2294 de 2023 (Plan de Desarrollo) obliga a los entes territoriales a basar sus intervenciones sociales en caracterización de vulnerabilidad con enfoque diferencial.</p>
+            </div>
+            <div class="justify-card">
+                <span class="justify-num">06</span>
+                <h3>Replicabilidad</h3>
+                <p>La metodología desarrollada puede escalarse a los 116 municipios restantes de Cundinamarca, convirtiéndose en un modelo para la gestión social departamental.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- OBJETIVOS -->
+<section class="section" id="objetivos">
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">03 — Objetivos</span>
+            <h2 class="section-title">Metas del<br><em>Proyecto</em></h2>
+        </div>
+        <div class="obj-layout">
+            <div class="obj-general">
+                <div class="obj-gen-label">Objetivo General</div>
+                <p class="obj-gen-text">Desarrollar un sistema de segmentación efectiva de la población vulnerable en cinco municipios de Cundinamarca, mediante el análisis de 4 millones de registros de datos, para mejorar la toma de decisiones sociales y la focalización de recursos públicos.</p>
+            </div>
+            <div class="obj-especificos">
+                <div class="obj-esp-label">Objetivos Específicos</div>
+                <div class="obj-list">
+                    <div class="obj-item">
+                        <span class="obj-bullet">→</span>
+                        <p>Integrar y limpiar los datos de 4 millones de registros provenientes de fuentes gubernamentales de los 5 municipios seleccionados.</p>
+                    </div>
+                    <div class="obj-item">
+                        <span class="obj-bullet">→</span>
+                        <p>Aplicar algoritmos de clustering para identificar grupos homogéneos de vulnerabilidad según variables socioeconómicas, de salud y educación.</p>
+                    </div>
+                    <div class="obj-item">
+                        <span class="obj-bullet">→</span>
+                        <p>Construir perfiles de riesgo municipal que permitan priorizar intervenciones según urgencia y magnitud del impacto esperado.</p>
+                    </div>
+                    <div class="obj-item">
+                        <span class="obj-bullet">→</span>
+                        <p>Diseñar un dashboard interactivo para que funcionarios y tomadores de decisión consulten la segmentación en tiempo real.</p>
+                    </div>
+                    <div class="obj-item">
+                        <span class="obj-bullet">→</span>
+                        <p>Validar los resultados con actores institucionales locales y generar recomendaciones de política diferenciadas por municipio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROCESO -->
+<section class="section alt" id="proceso">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag">04 — Proceso</span>
+            <h2 class="section-title">Metodología y<br><em>Flujo de Trabajo</em></h2>
+        </div>
+        <div class="process-timeline">
+            <div class="process-step" data-step="1">
+                <div class="step-number">01</div>
+                <div class="step-content">
+                    <div class="step-icon">🗄</div>
+                    <h3>Recolección de Datos</h3>
+                    <p>Integración de 4M+ registros desde SISBEN IV, Registro Civil, bases del ICBF, Secretarías Municipales y datos del DANE. Estandarización de formatos y variables.</p>
+                    <div class="step-tag">4,000,000 registros · 5 fuentes</div>
+                </div>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step" data-step="2">
+                <div class="step-number">02</div>
+                <div class="step-content">
+                    <div class="step-icon">🔧</div>
+                    <h3>Limpieza y ETL</h3>
+                    <p>Tratamiento de valores nulos, duplicados y outliers. Normalización de variables numéricas y codificación de variables categóricas. Reducción de ruido estadístico.</p>
+                    <div class="step-tag">Python · Pandas · NumPy</div>
+                </div>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step" data-step="3">
+                <div class="step-number">03</div>
+                <div class="step-content">
+                    <div class="step-icon">🧠</div>
+                    <h3>Análisis y Clustering</h3>
+                    <p>Aplicación de K-Means, DBSCAN y análisis de componentes principales (PCA) para segmentar perfiles de vulnerabilidad. Validación con índice de Silhouette.</p>
+                    <div class="step-tag">Scikit-learn · K-Means · PCA</div>
+                </div>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step" data-step="4">
+                <div class="step-number">04</div>
+                <div class="step-content">
+                    <div class="step-icon">📈</div>
+                    <h3>Visualización</h3>
+                    <p>Construcción de dashboards interactivos con mapas de calor territoriales, gráficas comparativas por municipio y reportes automáticos para tomadores de decisión.</p>
+                    <div class="step-tag">Flask · Chart.js · Folium</div>
+                </div>
+            </div>
+            <div class="process-connector"></div>
+            <div class="process-step" data-step="5">
+                <div class="step-number">05</div>
+                <div class="step-content">
+                    <div class="step-icon">✅</div>
+                    <h3>Validación y Despliegue</h3>
+                    <p>Socialización con secretarías de desarrollo social, ajuste según retroalimentación institucional y despliegue del sistema en servidores departamentales.</p>
+                    <div class="step-tag">Validación · Documentación · Deploy</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="section" id="resultados">
+    <div class="container">
+        <div class="section-header center">
+            <span class="section-tag">05 — Resultados</span>
+            <h2 class="section-title">Hallazgos por<br><em>Municipio</em></h2>
+        </div>
+
+        <!-- Tarjetas municipios -->
+        <div class="municipios-grid" id="municipios-grid">
+            <!-- Generadas por JS -->
+        </div>
+
+        <!-- Gráfica de barras con Chart.js -->
+        <div class="chart-section">
+            <h3 class="chart-title">Índice de Pobreza Multidimensional por Municipio <span class="chart-sub">(%)</span></h3>
+            <div class="chart-wrap">
+                <canvas id="chartPobreza" height="80"></canvas>
+            </div>
+        </div>
+
+        <div class="chart-section">
+            <h3 class="chart-title">Población Vulnerable Identificada <span class="chart-sub">(personas)</span></h3>
+            <div class="chart-wrap">
+                <canvas id="chartVulnerables" height="80"></canvas>
+            </div>
+        </div>
+
+        <!-- Tabla comparativa -->
+        <div class="table-section">
+            <h3 class="chart-title">Comparativo Detallado de Indicadores</h3>
+            <div class="table-wrap">
+                <table class="data-table" id="data-table">
+                    <thead>
+                        <tr>
+                            <th>Municipio</th>
+                            <th>Población Total</th>
+                            <th>Vulnerables</th>
+                            <th>% Pobreza</th>
+                            <th>Sin Salud</th>
+                            <th>Sin Educación</th>
+                            <th>Desempleo</th>
+                            <th>Riesgo</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body">
+                        <!-- Llenado por JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Conclusiones -->
+        <div class="conclusions">
+            <h3 class="concl-title">Conclusiones Clave</h3>
+            <div class="concl-grid">
+                <div class="concl-card">
+                    <span class="concl-icon">🔴</span>
+                    <h4>Soacha: Prioridad Máxima</h4>
+                    <p>Con 285.000 personas vulnerables y 42.3% de pobreza, Soacha requiere intervención urgente e integral. Es el municipio con mayor masa de población en riesgo de toda la región.</p>
+                </div>
+                <div class="concl-card">
+                    <span class="concl-icon">🟠</span>
+                    <h4>Fusagasugá: Riesgo Subestimado</h4>
+                    <p>Pese a su tamaño medio, Fusagasugá presenta índices de vulnerabilidad desproporcionados, lo que sugiere una focalización histórica insuficiente de los programas sociales.</p>
+                </div>
+                <div class="concl-card">
+                    <span class="concl-icon">🟢</span>
+                    <h4>Chía: Modelo a Escalar</h4>
+                    <p>Los mejores indicadores de Chía correlacionan con una mayor cobertura de programas y una gestión de datos más estructurada. Su modelo puede replicarse en los demás.</p>
+                </div>
+                <div class="concl-card">
+                    <span class="concl-icon">📌</span>
+                    <h4>Brecha Intermunicipal</h4>
+                    <p>La diferencia en pobreza entre el municipio con mejor y peor desempeño supera los 18 puntos porcentuales, evidenciando la necesidad de políticas territorialmente diferenciadas.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="logo-icon">⬡</span>
+                <span class="logo-text">CundaData</span>
+            </div>
+            <p class="footer-desc">Proyecto de análisis de datos sociales para Cundinamarca. Desarrollado con fines académicos e investigativos para la mejora de políticas públicas sociales.</p>
+            <div class="footer-tags">
+                <span>#Cundinamarca</span>
+                <span>#CienciaDeDatos</span>
+                <span>#PoliticaSocial</span>
+                <span>#VulnerabilidadSocial</span>
+                <span>#Flask</span>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 CundaData · Análisis Social · Cundinamarca, Colombia</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+// Datos municipios
+const municipiosData = {
+    "Soacha":      { poblacion: 700000, vulnerables: 285000, pobreza: 42.3, sin_salud: 18.7, sin_educacion: 22.1, desempleo: 19.4, color: "#E74C3C" },
+    "Facatativá":  { poblacion: 160000, vulnerables: 52000,  pobreza: 31.2, sin_salud: 14.3, sin_educacion: 16.8, desempleo: 14.2, color: "#E67E22" },
+    "Zipaquirá":   { poblacion: 130000, vulnerables: 41000,  pobreza: 28.9, sin_salud: 12.1, sin_educacion: 15.3, desempleo: 13.1, color: "#D4A017" },
+    "Chía":        { poblacion: 140000, vulnerables: 35000,  pobreza: 24.5, sin_salud: 10.2, sin_educacion: 12.7, desempleo: 11.8, color: "#27AE60" },
+    "Fusagasugá":  { poblacion: 145000, vulnerables: 58000,  pobreza: 38.6, sin_salud: 16.9, sin_educacion: 20.4, desempleo: 17.3, color: "#8E44AD" }
+};
+
+function getRiesgo(pobreza) {
+    if (pobreza >= 38) return { label: "Crítico", cls: "riesgo-critico" };
+    if (pobreza >= 28) return { label: "Alto", cls: "riesgo-alto" };
+    return { label: "Medio", cls: "riesgo-medio" };
+}
+
+// Render tarjetas municipios
+const grid = document.getElementById('municipios-grid');
+Object.entries(municipiosData).forEach(([nombre, d]) => {
+    const riesgo = getRiesgo(d.pobreza);
+    const pct = Math.round((d.vulnerables / d.poblacion) * 100);
+    grid.innerHTML += `
+    <div class="muni-card" style="--muni-color: ${d.color}">
+        <div class="muni-header">
+            <h3 class="muni-name">${nombre}</h3>
+            <span class="muni-riesgo ${riesgo.cls}">${riesgo.label}</span>
+        </div>
+        <div class="muni-stat-big">${d.vulnerables.toLocaleString('es-CO')}</div>
+        <div class="muni-stat-label">personas vulnerables</div>
+        <div class="muni-bar-wrap">
+            <div class="muni-bar" style="width: ${pct}%; background: ${d.color}"></div>
+        </div>
+        <div class="muni-pct">${pct}% de la población</div>
+        <div class="muni-indicators">
+            <div class="muni-ind"><span>Pobreza</span><strong>${d.pobreza}%</strong></div>
+            <div class="muni-ind"><span>Sin Salud</span><strong>${d.sin_salud}%</strong></div>
+            <div class="muni-ind"><span>Desempleo</span><strong>${d.desempleo}%</strong></div>
+        </div>
+    </div>`;
+});
+
+// Render tabla
+const tbody = document.getElementById('table-body');
+Object.entries(municipiosData).forEach(([nombre, d]) => {
+    const riesgo = getRiesgo(d.pobreza);
+    tbody.innerHTML += `
+    <tr>
+        <td><span class="td-dot" style="background:${d.color}"></span>${nombre}</td>
+        <td>${d.poblacion.toLocaleString('es-CO')}</td>
+        <td>${d.vulnerables.toLocaleString('es-CO')}</td>
+        <td>${d.pobreza}%</td>
+        <td>${d.sin_salud}%</td>
+        <td>${d.sin_educacion}%</td>
+        <td>${d.desempleo}%</td>
+        <td><span class="badge ${riesgo.cls}">${riesgo.label}</span></td>
+    </tr>`;
+});
+
+// Chart pobreza
+const labelsM = Object.keys(municipiosData);
+const colores = Object.values(municipiosData).map(d => d.color);
+
+new Chart(document.getElementById('chartPobreza'), {
+    type: 'bar',
+    data: {
+        labels: labelsM,
+        datasets: [{
+            label: 'Índice de Pobreza (%)',
+            data: labelsM.map(m => municipiosData[m].pobreza),
+            backgroundColor: colores.map(c => c + 'CC'),
+            borderColor: colores,
+            borderWidth: 2,
+            borderRadius: 6,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: { beginAtZero: true, max: 55, grid: { color: 'rgba(200,169,110,0.1)' }, ticks: { color: '#9A8C6E' } },
+            x: { grid: { display: false }, ticks: { color: '#9A8C6E', font: { weight: '500' } } }
+        }
+    }
+});
+
+// Chart vulnerables
+new Chart(document.getElementById('chartVulnerables'), {
+    type: 'bar',
+    data: {
+        labels: labelsM,
+        datasets: [{
+            label: 'Personas Vulnerables',
+            data: labelsM.map(m => municipiosData[m].vulnerables),
+            backgroundColor: colores.map(c => c + 'CC'),
+            borderColor: colores,
+            borderWidth: 2,
+            borderRadius: 6,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: { beginAtZero: true, grid: { color: 'rgba(200,169,110,0.1)' }, ticks: { color: '#9A8C6E' } },
+            x: { grid: { display: false }, ticks: { color: '#9A8C6E', font: { weight: '500' } } }
+        }
+    }
+});
+
+// Navbar scroll
+window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+// Animate on scroll
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.process-step, .justify-card, .muni-card, .concl-card').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
